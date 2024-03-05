@@ -2,9 +2,9 @@ import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
-// create cards
-const createCard = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/cards.json`, {
+// create categories
+const createCategory = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/categories.json`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -16,9 +16,9 @@ const createCard = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// read cards
-const getCards = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/cards.json?orderBy="uid"&equalTo="${uid}"`, {
+// read categories
+const getCategories = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/categories.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -35,9 +35,9 @@ const getCards = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// update cards
-const updateCard = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/cards/${payload.firebaseKey}.json`, {
+// update categories
+const updateCategory = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/categories/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -49,9 +49,9 @@ const updateCard = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// delete cards
-const deleteCard = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/cards/${firebaseKey}.json`, {
+// delete categories
+const deleteCategory = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/categories/${firebaseKey}.json`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -69,8 +69,8 @@ const deleteCard = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 export {
-  createCard,
-  getCards,
-  updateCard,
-  deleteCard
+  createCategory,
+  getCategories,
+  updateCategory,
+  deleteCategory
 };
