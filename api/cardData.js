@@ -2,21 +2,7 @@ import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
-// create cards
-const createCard = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/cards.json`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(payload),
-  })
-    .then((response) => response.json())
-    .then((data) => resolve(data))
-    .catch(reject);
-});
-
-// read cards
+// get cards
 const getCards = (uid) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/cards.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
@@ -32,6 +18,33 @@ const getCards = (uid) => new Promise((resolve, reject) => {
         resolve([]);
       }
     })
+    .catch(reject);
+});
+
+// get a single card
+const getSingleCard = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/cards/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+// create cards
+const createCard = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/cards.json`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
     .catch(reject);
 });
 
@@ -69,8 +82,9 @@ const deleteCard = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 export {
-  createCard,
   getCards,
+  getSingleCard,
+  createCard,
   updateCard,
   deleteCard
 };

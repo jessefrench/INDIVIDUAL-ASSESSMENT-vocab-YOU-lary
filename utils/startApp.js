@@ -6,15 +6,17 @@ import { getCards } from '../api/cardData';
 import { showCards } from '../pages/cards';
 import formEvents from '../events/formEvents';
 import navEvents from '../events/navEvents';
+import domEvents from '../events/domEvents';
 
 const startApp = (uid) => {
-  domBuilder(uid);
+  domBuilder();
+  domEvents(uid);
   formEvents(uid);
   navbar();
   filterButtons();
   logoutButton();
   navEvents();
-  getCards(uid).then(showCards);
+  getCards(uid).then((cards) => showCards(cards, uid));
 };
 
 export default startApp;

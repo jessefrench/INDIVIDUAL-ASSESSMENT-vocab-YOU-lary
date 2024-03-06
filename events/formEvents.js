@@ -13,7 +13,6 @@ const formEvents = (uid) => {
         category_id: document.querySelector('#category_id').value,
         uid
       };
-
       createCard(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateCard(patchPayload).then(() => {
