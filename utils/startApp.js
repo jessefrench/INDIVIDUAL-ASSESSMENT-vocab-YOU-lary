@@ -15,7 +15,7 @@ const startApp = (uid) => {
   navbar();
   filterButtons();
   logoutButton();
-  navEvents();
+  navEvents(uid);
   getCards(uid).then((cards) => showCards(cards, uid));
 };
 
