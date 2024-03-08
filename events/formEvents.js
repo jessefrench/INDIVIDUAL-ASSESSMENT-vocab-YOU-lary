@@ -1,4 +1,5 @@
 import { createCard, getCards, updateCard } from '../api/cardData';
+import filterButtons from '../components/buttons/filterButtons';
 import { showCards } from '../pages/cards';
 
 const formEvents = (uid) => {
@@ -19,6 +20,7 @@ const formEvents = (uid) => {
         const patchPayload = { firebaseKey: name };
         updateCard(patchPayload).then(() => {
           getCards(uid).then((cards) => showCards(cards, uid));
+          filterButtons();
         });
       });
     }
@@ -36,6 +38,7 @@ const formEvents = (uid) => {
 
       updateCard(payload).then(() => {
         getCards(uid).then((cards) => showCards(cards, uid));
+        filterButtons();
       });
     }
   });

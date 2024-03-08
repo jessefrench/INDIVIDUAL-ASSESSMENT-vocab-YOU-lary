@@ -22,9 +22,8 @@ const showCards = async (array, uid) => {
             <h5 class="card-title">${card.title}</h5>
             <h6 class="card-title">Category: ${singleCategory.languageTech}</h6>
             <p class="card-text">${card.definition}</p>
-            <i id="view-card-btn--${card.firebaseKey}" class="btn btn-success"><span id="view-card-btn--${card.firebaseKey}" class="fas fa-eye"></span></i>
-            <i id="edit-card-btn--${card.firebaseKey}" class="btn btn-info"><span id="edit-card-btn--${card.firebaseKey}" class="fas fa-edit"></span></i>
-            <i id="delete-card-btn--${card.firebaseKey}" class="btn btn-danger"><span id="delete-card-btn--${card.firebaseKey}" class="fas fa-trash-alt"></span></i>
+            <a href="#" id="edit-card-btn--${card.firebaseKey}">Edit</a>
+            <a href="#" id="delete-card-btn--${card.firebaseKey}">Delete</a>
           </div>
         </div>`;
     });

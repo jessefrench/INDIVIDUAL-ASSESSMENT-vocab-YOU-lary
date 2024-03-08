@@ -7,15 +7,17 @@ import { showCards } from '../pages/cards';
 import formEvents from '../events/formEvents';
 import navEvents from '../events/navEvents';
 import domEvents from '../events/domEvents';
+import filterEvents from '../events/filterEvents';
 
 const startApp = (uid) => {
   domBuilder();
-  domEvents(uid);
-  formEvents(uid);
   navbar();
-  filterButtons();
   logoutButton();
+  filterButtons();
+  domEvents(uid);
   navEvents(uid);
+  formEvents(uid);
+  filterEvents(uid);
   getCards(uid).then((cards) => showCards(cards, uid));
 };
 
