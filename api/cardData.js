@@ -81,10 +81,61 @@ const deleteCard = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// filter cards by category: HTML
+const htmlCards = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/cards.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const category = Object.values(data).filter((card) => card.category_id === '-NsB5pdOM1X9MT4lVcrc');
+      resolve(category);
+    })
+    .catch(reject);
+});
+
+// filter cards by category: CSS
+const cssCards = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/cards.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const category = Object.values(data).filter((card) => card.category_id === '-NsB5pdPwsETWpDquMcd');
+      resolve(category);
+    })
+    .catch(reject);
+});
+
+// filter cards by category: JS
+const jsCards = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/cards.json?orderBy="uid"&equalTo="${uid}"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const category = Object.values(data).filter((card) => card.category_id === '-NsB5pdPwsETWpDquMce');
+      resolve(category);
+    })
+    .catch(reject);
+});
+
 export {
   getCards,
   getSingleCard,
   createCard,
   updateCard,
-  deleteCard
+  deleteCard,
+  htmlCards,
+  cssCards,
+  jsCards
 };
