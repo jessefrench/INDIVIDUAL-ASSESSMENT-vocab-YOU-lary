@@ -16,7 +16,6 @@ const selectCategory = (uid, categoryId) => {
             ${category.languageTech}
         </option>`;
     });
-    console.warn(uid);
     domString += '</select>';
     renderToDOM('#select-category', domString);
   });
