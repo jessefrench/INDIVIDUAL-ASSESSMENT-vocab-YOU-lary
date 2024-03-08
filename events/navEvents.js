@@ -1,5 +1,4 @@
 import { signOut } from '../utils/auth';
-
 import addCardForm from '../components/forms/addCardForm';
 
 const navEvents = (uid) => {

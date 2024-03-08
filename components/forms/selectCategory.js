@@ -3,7 +3,7 @@ import renderToDOM from '../../utils/renderToDom';
 
 const selectCategory = (uid, categoryId) => {
   let domString = `
-    <label for="category">Select a Category</label>
+    <label for="category">Category</label>
     <select class="form-control" id="category_id" required>
     <option value="">Select a Category</option>`;
 

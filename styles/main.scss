@@ -2,9 +2,14 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-  background-color: antiquewhite;
+  background-color: #232323;
+  color: #e6edf3;
   text-align: center;
   margin-top: 100px;
+}
+
+nav {
+  background-color: #343a40;
 }
 
 #cards {
@@ -16,7 +21,35 @@ body {
   justify-content: center;
 
   .card {
-    width: 300px;
-    margin: 5px;
+    background-color: #e6edf3;
+    width: 200px;
+    margin: 20px;
+    text-align: left;
+    border-radius: 2px;
+
+    h5, h6, p {
+      margin-bottom: 20px;
+    }
+
+    a {
+      text-decoration: none;
+    }
   }
+}
+
+#filter {
+  padding-bottom: 20px;
+}
+
+.btn-primary {
+  width: 120px;
+  background-color: #6c757d;
+  border: none;
+  border-radius: 2px;
+  margin: 0 10px;
+}
+
+.btn-primary:hover {
+  background-color: #e6edf3;
+  color: #232323;
 }
