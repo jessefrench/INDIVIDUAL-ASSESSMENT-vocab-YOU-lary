@@ -18,7 +18,7 @@ const formEvents = (uid) => {
       createCard(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateCard(patchPayload).then(() => {
-          getCards(uid).then(showCards);
+          getCards(uid).then((cards) => showCards(cards, uid));
         });
       });
     }
@@ -35,7 +35,7 @@ const formEvents = (uid) => {
       };
 
       updateCard(payload).then(() => {
-        getCards(uid).then(showCards);
+        getCards(uid).then((cards) => showCards(cards, uid));
       });
     }
   });
