@@ -8,6 +8,10 @@ body {
   margin-top: 100px;
 }
 
+#login-form-container h1 {
+  margin-bottom: 20px;
+}
+
 nav {
   background-color: #343a40;
 }
@@ -52,4 +56,18 @@ nav {
 .btn-primary:hover {
   background-color: #e6edf3;
   color: #232323;
+}
+
+#form-container {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+
+form {
+  width: 50%;
+
+  input, textarea, select {
+    margin-bottom: 20px;
+  }
 }
