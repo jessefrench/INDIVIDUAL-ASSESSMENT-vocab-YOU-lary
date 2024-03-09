@@ -16,7 +16,7 @@ const addCardForm = (card = {}) => {
         <textarea class="form-control" placeholder="Enter a definition" id="definition" style="height: 100px">${card.definition || ''}</textarea>
       </div>
       <div class="form-group" id="select-category"></div>
-      <button type="submit" id="submit" class="btn btn-primary">Submit Card</button>
+      <button type="submit" id="submit" class="btn btn-success">Submit</button>
     </form>`;
   renderToDOM('#form-container', domString);
   selectCategory(`${card.uid}`, `${card.category_id || ''}`);
